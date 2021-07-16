@@ -1,6 +1,10 @@
 <template>
     <div class="hello">
-        <h1>Home</h1>
+        <ul>
+            <li v-for="(ins, index) in myArr" :key="index">
+                Name {{ ins.name }} {{ index }}
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -8,7 +12,10 @@
 export default {
     name: "Home",
     props: {
-        msg: String,
+        myArr: {
+            type: Array,
+            required: true,
+        },
     },
 };
 </script>

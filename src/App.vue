@@ -1,5 +1,5 @@
 <template>
-    <Home />
+    <Home :myArr="myArr" />
 </template>
 
 <script>
@@ -9,6 +9,11 @@ export default {
     name: "App",
     components: {
         Home,
+    },
+    data() {
+        return {
+            myArr: [{ name: "hola" }, { name: "mundo" }],
+        };
     },
 };
 </script>
