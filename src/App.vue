@@ -1,20 +1,12 @@
 <template>
-    <Home :myArr="myArr" />
+    <Nav />
 </template>
 
 <script>
-import Home from "./components/Home.vue";
-
+import Nav from "./views/Nav.vue";
 export default {
     name: "App",
-    components: {
-        Home,
-    },
-    data() {
-        return {
-            myArr: [{ name: "hola" }, { name: "mundo" }],
-        };
-    },
+    component: { Nav },
 };
 </script>
 

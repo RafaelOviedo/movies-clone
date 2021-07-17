@@ -1,22 +1,12 @@
 <template>
     <div class="hello">
-        <ul>
-            <li v-for="(ins, index) in myArr" :key="index">
-                Name {{ ins.name }} {{ index }}
-            </li>
-        </ul>
+        Home component
     </div>
 </template>
 
 <script>
 export default {
     name: "Home",
-    props: {
-        myArr: {
-            type: Array,
-            required: true,
-        },
-    },
 };
 </script>
 
