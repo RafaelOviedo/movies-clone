@@ -1,20 +1,14 @@
 <template>
-    <div class="homeTitle">
-        Home component
-    </div>
+    <SearchBar />
 </template>
 
 <script>
+import SearchBar from "../components/SearchBar.vue";
 export default {
     name: "Home",
+    components: { SearchBar },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.homeTitle {
-    position: absolute;
-    top: 30%;
-    left: 40%;
-}
-</style>
+<style scoped></style>

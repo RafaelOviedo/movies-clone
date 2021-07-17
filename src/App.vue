@@ -1,12 +1,13 @@
 <template>
-    <Nav />
+    <NavBar />
 </template>
 
 <script>
-import Nav from "./views/Nav.vue";
+import NavBar from "./views/NavBar.vue";
+
 export default {
+    components: { NavBar },
     name: "App",
-    components: Nav,
 };
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-    <div>Landing component</div>
+    <div class="landingTitle">Landing component</div>
 </template>
 
 <script>
@@ -8,4 +8,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.landingTitle {
+    position: absolute;
+    top: 30%;
+    left: 45%;
+}
+</style>

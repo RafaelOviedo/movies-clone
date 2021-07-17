@@ -1,13 +1,13 @@
 <template>
-    <div class="aboutTitle">About component</div>
+    <div class="favouriteTitle">Favourite Component</div>
 </template>
 
 <script>
 export default {};
 </script>
 
-<style scoped>
-.aboutTitle {
+<style>
+.favouriteTitle {
     position: absolute;
     top: 30%;
     left: 45%;
