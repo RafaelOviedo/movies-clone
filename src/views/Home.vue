@@ -1,12 +1,21 @@
 <template>
-    <SearchBar />
+    <div>
+        <SearchBar />
+    </div>
 </template>
 
 <script>
 import SearchBar from "../components/SearchBar.vue";
+// import store from "../store";
+
 export default {
     name: "Home",
     components: { SearchBar },
+    data() {
+        return {
+            movie: [],
+        };
+    },
 };
 </script>
 

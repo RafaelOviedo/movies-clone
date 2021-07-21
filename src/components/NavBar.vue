@@ -62,5 +62,6 @@ export default {
 
 .navItem {
     text-decoration: none;
+    color: white;
 }
 </style>
