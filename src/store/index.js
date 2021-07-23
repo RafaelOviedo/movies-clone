@@ -1,7 +1,6 @@
 import { createStore } from "vuex";
 import axios from "axios";
 
-const url = `https://www.omdbapi.com/?apikey=20dac387&s=avengers`;
 //Create store
 const store = createStore({
     state: {
@@ -21,9 +20,11 @@ const store = createStore({
         },
     },
     actions: {
-        async fetchMovies({ commit }) {
-            let response = await axios.get(url);
-            commit("addMovie", response.data);
+        async fetchMovies({ commit }, titulo) {
+            let response = await axios.get(
+                `https://www.omdbapi.com/?apikey=20dac387&s=` + titulo
+            );
+            commit("addMovie", response.data.Search);
         },
     },
 

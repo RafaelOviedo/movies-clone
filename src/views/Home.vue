@@ -1,8 +1,15 @@
 <template>
     <div>
         <SearchBar />
-        <button class="button" @click="fetchData">increment {{ count }}</button>
-        <div class="movie">{{ moviesLoaded }}</div>
+        <ul class="movieContainer">
+            <li
+                class="movieInstance"
+                v-for="(movie, id) in moviesLoaded"
+                :key="id"
+            >
+                Title: {{ movie.Title }}
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -20,9 +27,6 @@ export default {
         increment() {
             return store.commit("increment");
         },
-        fetchData() {
-            return store.dispatch("fetchMovies");
-        },
     },
     computed: {
         ...mapState(["count"]),
@@ -38,9 +42,11 @@ export default {
     top: 20%;
 }
 
-.movie {
+.movieContainer {
+    width: 90%;
+    height: 500px;
     position: absolute;
-    top: 40%;
-    left: 45%;
+    top: 20%;
+    background: tomato;
 }
 </style>

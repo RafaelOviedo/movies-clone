@@ -1,5 +1,5 @@
 <template>
-    <form class="formContainer">
+    <form class="formContainer" @submit.prevent="fetchData(movie)">
         <input
             v-model="movie"
             type="text"
@@ -10,12 +10,18 @@
 </template>
 
 <script>
+import store from "../store/index";
 export default {
     name: "SearchBar",
     data() {
         return {
             movie: "",
         };
+    },
+    methods: {
+        fetchData(movieTitle) {
+            return store.dispatch(`fetchMovies`, movieTitle);
+        },
     },
 };
 </script>
