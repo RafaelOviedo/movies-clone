@@ -8,27 +8,26 @@ const store = createStore({
         moviesFavourites: [],
         moviesLoaded: [],
         movieDetail: {},
+        count: 0,
     },
     mutations: {
         //mutations are syncronous to change state
-        addMovieFavourite(state, payload) {
-            state.moviesFavourites = state.moviesFavourites.concat(payload);
+        addMovie(state, payload) {
+            state.moviesLoaded = state.moviesLoaded.concat(payload);
         },
-        getMovies(state, payload) {
-            state.moviesLoaded = payload;
+
+        increment(state) {
+            state.count++;
         },
     },
     actions: {
-        async getMovies(state) {
+        async fetchMovies({ commit }) {
             let response = await axios.get(url);
-            state.commit("getMovies", response.data);
+            commit("addMovie", response.data);
         },
     },
-    getters: {
-        getMovies(state) {
-            return state.moviesLoaded;
-        },
-    },
+
+    getters: {},
     modules: {},
 });
 
