@@ -7,7 +7,10 @@
                 v-for="(movie, id) in moviesLoaded"
                 :key="id"
             >
-                Title: {{ movie.Title }}
+                <p>Title: {{ movie.Title }}</p>
+                <p>Title: {{ movie.Year }}</p>
+
+                <button class="removeButton">&times;</button>
             </li>
         </ul>
     </div>
@@ -43,10 +46,32 @@ export default {
 }
 
 .movieContainer {
-    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 97.4%;
     height: 500px;
     position: absolute;
     top: 20%;
+    left: 0%;
     background: tomato;
+}
+
+.movieInstance {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    width: 25%;
+    height: 20%;
+    position: relative;
+    top: 50vh;
+    left: 5%;
+    border: 2px solid black;
+    margin-bottom: 1%;
+}
+
+.removeButton {
+    width: 15%;
+    transform: translate(565%, -450%);
 }
 </style>

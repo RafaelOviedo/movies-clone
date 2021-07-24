@@ -30,6 +30,6 @@ export default {
 .formContainer {
     position: absolute;
     top: 15%;
-    left: 40%;
+    left: 45%;
 }
 </style>
