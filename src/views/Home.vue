@@ -10,7 +10,17 @@
                 <p>Title: {{ movie.Title }}</p>
                 <p>Title: {{ movie.Year }}</p>
 
-                <button class="removeButton">&times;</button>
+                <button
+                    class="removeButton"
+                    @click="
+                        addMovieToFavourites({
+                            title: movie.Title,
+                            id: movie.imdbID,
+                        })
+                    "
+                >
+                    &times;
+                </button>
             </li>
         </ul>
     </div>
@@ -27,8 +37,8 @@ export default {
     components: { SearchBar },
 
     methods: {
-        increment() {
-            return store.commit("increment");
+        addMovieToFavourites(payload) {
+            return store.dispatch("addMovieToFavourites", payload);
         },
     },
     computed: {
@@ -54,7 +64,6 @@ export default {
     position: absolute;
     top: 20%;
     left: 0%;
-    background: tomato;
 }
 
 .movieInstance {

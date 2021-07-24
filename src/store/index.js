@@ -12,11 +12,11 @@ const store = createStore({
     mutations: {
         //mutations are syncronous to change state
         addMovie(state, payload) {
-            state.moviesLoaded = state.moviesLoaded.concat(payload);
+            state.moviesLoaded = payload;
         },
 
-        increment(state) {
-            state.count++;
+        addMovieToFavourites(state, payload) {
+            state.moviesFavourites.push(payload);
         },
     },
     actions: {
@@ -25,6 +25,9 @@ const store = createStore({
                 `https://www.omdbapi.com/?apikey=20dac387&s=` + titulo
             );
             commit("addMovie", response.data.Search);
+        },
+        addMovieToFavourites({ commit }, payload) {
+            commit("addMovieToFavourites", payload);
         },
     },
 
