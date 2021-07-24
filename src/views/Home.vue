@@ -42,7 +42,6 @@ export default {
         },
     },
     computed: {
-        ...mapState(["count"]),
         ...mapState(["moviesLoaded"]),
     },
 };

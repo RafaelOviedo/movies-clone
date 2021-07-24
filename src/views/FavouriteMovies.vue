@@ -1,9 +1,21 @@
 <template>
-    <div class="favouriteTitle">Favourite Component</div>
+    <ul class="favouriteTitle">
+        <li v-for="(movie, id) in moviesFavourites" :key="id">
+            <p>{{ movie.title }}</p>
+            <!-- <router-link>More info</router-link> -->
+            <button>&times;</button>
+        </li>
+    </ul>
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+export default {
+    name: "FavouriteMovies",
+    computed: {
+        ...mapState(["moviesFavourites"]),
+    },
+};
 </script>
 
 <style>
