@@ -1,14 +1,18 @@
 <template>
     <div>
         <SearchBar />
+
         <ul class="movieContainer">
             <li
                 class="movieInstance"
-                v-for="(movie, id) in moviesLoaded"
-                :key="id"
+                v-for="movie in moviesLoaded"
+                :key="movie.imdbID"
             >
                 <p>Title: {{ movie.Title }}</p>
-                <p>Title: {{ movie.Year }}</p>
+                <router-link
+                    :to="{ name: 'MovieDetail', params: { id: movie.imdbID } }"
+                    >See more</router-link
+                >
 
                 <button
                     class="removeButton"
@@ -19,7 +23,7 @@
                         })
                     "
                 >
-                    &times;
+                    favourite
                 </button>
             </li>
         </ul>

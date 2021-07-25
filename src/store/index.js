@@ -7,18 +7,25 @@ const store = createStore({
         moviesFavourites: [],
         moviesLoaded: [],
         movieDetail: {},
-        count: 0,
     },
+
     mutations: {
         //mutations are syncronous to change state
         addMovie(state, payload) {
             state.moviesLoaded = payload;
         },
 
+        addMovieDetail(state, payload) {
+            state.movieDetail = payload;
+        },
+
         addMovieToFavourites(state, payload) {
             state.moviesFavourites.push(payload);
         },
+
+        removeMovieFavourite() {},
     },
+
     actions: {
         async fetchMovies({ commit }, titulo) {
             let response = await axios.get(
@@ -26,6 +33,14 @@ const store = createStore({
             );
             commit("addMovie", response.data.Search);
         },
+
+        async fetchMovieId({ commit }, id) {
+            let response = await axios.get(
+                `https://www.omdbapi.com/?apikey=20dac387&i=` + id
+            );
+            commit("addMovieDetail", response.data);
+        },
+
         addMovieToFavourites({ commit }, payload) {
             commit("addMovieToFavourites", payload);
         },
