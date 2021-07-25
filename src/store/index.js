@@ -59,25 +59,3 @@ const store = createStore({
 });
 
 export default store;
-//   case "ADD_MOVIE_FAVORITE":
-//             return {
-//                 ...state,
-//                 moviesFavourites: state.moviesFavourites.concat(action.payload),
-//             };
-//         case "GET_MOVIES":
-//             return {
-//                 ...state,
-//                 moviesLoaded: action.payload.Search,
-//             };
-//         case "GET_MOVIE_DETAIL":
-//             return {
-//                 ...state,
-//                 movieDetail: action.payload,
-//             };
-//         case "REMOVE_MOVIE":
-//             return {
-//                 ...state,
-//                 moviesFavourites: state.moviesFavourites.filter(
-//                     (movie) => movie.id !== action.payload //revisar
-//                 ),
-//             };
