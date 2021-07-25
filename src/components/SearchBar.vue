@@ -1,11 +1,13 @@
 <template>
     <form class="formContainer" @submit.prevent="fetchData(movie)">
+        <p class="formTitle">Search your movie</p>
         <input
+            class="searchInput"
             v-model="movie"
             type="text"
             placeholder="type your movie here..."
         />
-        <input type="submit" name="submit" />
+        <input class="searchButton" type="submit" name="submit" />
     </form>
 </template>
 
@@ -28,8 +30,32 @@ export default {
 
 <style scoped>
 .formContainer {
+    width: 40%;
+    height: 20%;
     position: absolute;
     top: 15%;
-    left: 45%;
+    left: 30%;
+}
+
+.formTitle {
+    color: white;
+}
+
+.searchInput {
+    width: 40%;
+    height: 18%;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    border: 2px solid crimson;
+}
+
+.searchButton {
+    width: 15%;
+    height: 22%;
+    border-radius: 0 20px 20px 0;
+    background: crimson;
+    color: white;
+    border: none;
+    font-weight: bold;
 }
 </style>

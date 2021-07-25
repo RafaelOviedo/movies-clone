@@ -37,6 +37,8 @@ export default {
     width: 100%;
     height: 10vh;
     background: black;
+    z-index: 10;
+    border-bottom: 2px solid silver;
 }
 
 .backToLandingBtn {
@@ -49,6 +51,7 @@ export default {
     position: absolute;
     top: 35%;
     left: 20%;
+    color: white;
 }
 
 .navItemsBox {
