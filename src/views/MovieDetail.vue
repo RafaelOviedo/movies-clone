@@ -2,18 +2,27 @@
     <div class="movieDetailComponent">
         <p class="movieDetailHeader">Movie Detail</p>
         <div class="movieDetailContainer">
-            <p class="movieDetailTitle">{{ movieDetail.Title }}</p>
-            <p class="movieDetailRelease">{{ movieDetail.Released }}</p>
-            <p class="movieDetailGenre">{{ movieDetail.Genre }}</p>
-            <p class="movieDetailRating">{{ movieDetail.imdbRating }}</p>
-            <p class="movieDetailRuntime">{{ movieDetail.Runtime }}</p>
-            <p class="movieDetailLanguage">{{ movieDetail.Language }}</p>
-            <p class="movieDetailCountry">{{ movieDetail.Country }}</p>
-            <p class="movieDetailPlot">{{ movieDetail.Plot }}</p>
+            <p class="movieDetailTitle">Title: {{ movieDetail.Title }}</p>
+            <p class="movieDetailRelease">
+                Release date: {{ movieDetail.Released }}
+            </p>
+            <p class="movieDetailGenre">Genre: {{ movieDetail.Genre }}</p>
+            <p class="movieDetailRating">
+                Rating: {{ movieDetail.imdbRating }}
+            </p>
+            <p class="movieDetailRuntime">Runtime: {{ movieDetail.Runtime }}</p>
+            <p class="movieDetailLanguage">
+                Language: {{ movieDetail.Language }}
+            </p>
+            <p class="movieDetailCountry">Country: {{ movieDetail.Country }}</p>
+            <p class="movieDetailPlot">Plot: {{ movieDetail.Plot }}</p>
         </div>
-        <div class="movieDetailPoster">
-            <img src="`${movieDetail.Poster}`" alt="moviePoster" />
-        </div>
+
+        <img
+            class="movieDetailPoster"
+            :src="`${movieDetail.Poster}`"
+            alt="moviePoster"
+        />
     </div>
 </template>
 
@@ -23,6 +32,7 @@ import store from "../store";
 
 export default {
     name: "MovieDetail",
+
     mounted() {
         let id = this.$route.params.id;
         store.dispatch("fetchMovieId", id);
@@ -111,9 +121,10 @@ export default {
 }
 
 .movieDetailPlot {
+    width: 50%;
     position: absolute;
-    top: 60%;
-    left: 10%;
+    top: 70%;
+    left: 9%;
     color: white;
 }
 
@@ -121,9 +132,10 @@ export default {
     width: 20%;
     height: 60%;
     position: absolute;
-    top: 25%;
+    top: 27%;
     left: 65%;
     color: white;
     border: 2px solid silver;
+    border-radius: 20px;
 }
 </style>
