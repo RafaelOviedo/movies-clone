@@ -3,13 +3,21 @@
         <div class="landingTitle">
             Welcome to movies app, to continue press the button
         </div>
-        <button class="landingButton">Go to home page</button>
+        <button class="landingButton" @click="goToHomePage">
+            Go to home page
+        </button>
     </div>
 </template>
 
 <script>
 export default {
     name: "LandingPage",
+
+    methods: {
+        goToHomePage() {
+            return this.$router.push({ path: "/home" });
+        },
+    },
 };
 </script>
 
@@ -34,9 +42,17 @@ export default {
 .landingButton {
     position: absolute;
     top: 40%;
-    left: 45%;
-    width: 10%;
-    height: 5%;
+    left: 43%;
+    width: 12%;
+    height: 7%;
     background: silver;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    font-size: medium;
+    cursor: pointer;
+}
+.landingButton:hover {
+    background: white;
 }
 </style>

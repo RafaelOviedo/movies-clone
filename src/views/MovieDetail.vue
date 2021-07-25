@@ -1,6 +1,6 @@
 <template>
-    <div class="movieDetailTitle">
-        <p>{{ movieDetail.Title }}</p>
+    <div class="movieDetailComponent">
+        <p class="movieDetailTitle">{{ movieDetail.Title }}</p>
     </div>
 </template>
 
@@ -22,8 +22,19 @@ export default {
 </script>
 
 <style scoped>
+.movieDetailComponent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+}
+
 .movieDetailTitle {
     position: absolute;
-    top: 30%;
+    top: 20%;
+    left: 45%;
+    color: white;
 }
 </style>
