@@ -23,7 +23,11 @@ const store = createStore({
             state.moviesFavourites.push(payload);
         },
 
-        removeMovieFavourite() {},
+        removeMovieFavourite(state, payload) {
+            state.moviesFavourites = state.moviesFavourites.filter(
+                (movie) => payload !== movie.id
+            );
+        },
     },
 
     actions: {
@@ -43,6 +47,10 @@ const store = createStore({
 
         addMovieToFavourites({ commit }, payload) {
             commit("addMovieToFavourites", payload);
+        },
+
+        removeMovieFavourite({ commit }, payload) {
+            commit("removeMovieFavourite", payload);
         },
     },
 

@@ -15,7 +15,7 @@
                 >
 
                 <button
-                    class="removeButton"
+                    class="favouriteButton"
                     @click="
                         addMovieToFavourites({
                             title: movie.Title,
@@ -82,8 +82,8 @@ export default {
     margin-bottom: 1%;
 }
 
-.removeButton {
-    width: 15%;
-    transform: translate(565%, -450%);
+.favouriteButton {
+    width: 20%;
+    transform: translate(400%, -300%);
 }
 </style>

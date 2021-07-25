@@ -1,19 +1,27 @@
 <template>
     <ul class="favouriteTitle">
-        <li v-for="(movie, id) in moviesFavourites" :key="id">
+        <li v-for="movie in moviesFavourites" :key="movie.imdbID">
             <p>{{ movie.title }}</p>
             <!-- <router-link>More info</router-link> -->
-            <button>&times;</button>
+            <button @click="removeMovieFavourite(movie.id)">&times;</button>
         </li>
     </ul>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import store from "../store";
+
 export default {
     name: "FavouriteMovies",
     computed: {
         ...mapState(["moviesFavourites"]),
+    },
+
+    methods: {
+        removeMovieFavourite(movieId) {
+            return store.dispatch("removeMovieFavourite", movieId);
+        },
     },
 };
 </script>
