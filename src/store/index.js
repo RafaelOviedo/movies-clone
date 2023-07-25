@@ -33,14 +33,14 @@ const store = createStore({
     actions: {
         async fetchMovies({ commit }, titulo) {
             let response = await axios.get(
-                `https://www.omdbapi.com/?apikey=20dac387&s=` + titulo
+                `https://www.omdbapi.com/?apikey=4d413ecb&s=` + titulo
             );
             commit("addMovie", response.data.Search);
         },
 
         async fetchMovieId({ commit }, id) {
             let response = await axios.get(
-                `https://www.omdbapi.com/?apikey=20dac387&i=` + id
+                `https://www.omdbapi.com/?apikey=4d413ecb&i=` + id
             );
             commit("addMovieDetail", response.data);
         },
